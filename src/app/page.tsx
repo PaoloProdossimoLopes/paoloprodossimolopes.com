@@ -1,105 +1,63 @@
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Command, Download, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Command, Download, Github, Linkedin, Mail } from "lucide-react";
+import React from "react";
 
 export default function Home() {
   return (
     <main className="grid min-h-screen flex-col items-center justify-between p-24 gap-8">
-      <div className="flex gap-4">
-        <Card>
-          <Avatar  className="h-52 w-52"/>
+      <div className="flex gap-4 items-center">
+        <Card className="overflow-hidden h-52 w-52 p-1">
+          <Avatar className="h-full w-full rounded-sm">
+            <AvatarImage className="rounded-sm" src="https://media.licdn.com/dms/image/C5603AQEN25g65QdpBA/profile-displayphoto-shrink_400_400/0/1603466446875?e=1712188800&v=beta&t=h4LsF2w4WqndfPMyXERohEBQh82fwWvSI-YHfmk3AGw" alt="Paolo Prodossimo Lopes" />
+            <AvatarFallback className="rounded-sm">PPL</AvatarFallback>
+          </Avatar>
         </Card>
 
-        <div className="grid justify-between">
-          <div className="grid">
-            <p className="text-lg">Hi, <span className="font-bold">T</span></p>
+        <div className="grid justify-between gap-4">
+          <div className="grid gap-2">
+            <p className="text-xl">
+              Olá <span className="font-bold text-muted-foreground">{"<T>"}</span>,
+            </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus 
-              reprehenderit saepe ipsum ullam, incidunt harum amet asperiores 
-              rerum neque nulla optio sapiente at velit! Dolorum necessitatibus 
-              doloremque aspernatur? Distinctio, eum!
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus 
-              reprehenderit saepe ipsum ullam, incidunt harum amet asperiores 
-              rerum neque nulla optio sapiente at velit! Dolorum necessitatibus 
-              doloremque aspernatur? Distinctio, eum!
+              Sou Paolo Prodossimo Lopes, um engenheiro de software iOS<br />
+              especializado em criar experiências de usuário intuitivas e envolventes<br />
+              desde 2020. Atuamente curso Ciencia da computação.
             </p>
           </div>
 
           <div className="flex gap-2">
-            <Button variant="outline" className="flex gap-2">
-              <Linkedin />
-              LinkedIn
+            <Button variant="outline">
+              <a className="flex gap-2 items-center" href="https://www.linkedin.com/in/paoloprodossimolopes/">
+                <Linkedin />
+                LinkedIn
+              </a>
             </Button>
 
-            <Button variant="outline" className="flex gap-2">
-              <Github />
-              Github
+            <Button variant="outline">
+              <a className="flex gap-2 items-center" href="https://github.com/PaoloProdossimoLopes">
+                <Github />
+                Github
+              </a>
             </Button>
 
-            <Button className="flex gap-2">
-              <Download />
-              Baixar curriculo
+            <Button asChild variant="outline">
+              <a className="flex gap-2 items-center" href="mailto:paolo.prodossimo.lopes@gmail.com">
+                <Mail />
+                Envirar email
+              </a>
+            </Button>
+
+            <Button>
+              <a className="flex gap-2 items-center" href="#">
+                <Download />
+                Baixar curriculo
+              </a>
             </Button>
           </div>
         </div>
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Sobre</CardTitle>
-        </CardHeader>
-
-        <CardContent className="grid gap-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus 
-            reprehenderit saepe ipsum ullam, incidunt harum amet asperiores 
-            rerum neque nulla optio sapiente at velit! Dolorum necessitatibus 
-            doloremque aspernatur? Distinctio, eum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus 
-            reprehenderit saepe ipsum ullam, incidunt harum amet asperiores 
-            rerum neque nulla optio sapiente at velit! Dolorum necessitatibus 
-            doloremque aspernatur? Distinctio, eum!
-          </p>
-
-          <div className="flex gap-4">
-            <div className="grid items-center justify-center">
-              <Card className="h-12 w-12 flex items-center justify-center">
-                <Command className="h-6 w-6" />
-                </Card>
-              <p className="text-center">Swift</p>
-            </div>
-
-            <div className="grid items-center justify-center">
-              <Card className="h-12 w-12 flex items-center justify-center">
-                <Command className="h-6 w-6" />
-                </Card>
-              <p className="text-center">Swift</p>
-            </div> 
-
-            <div className="grid items-center justify-center">
-              <Card className="h-12 w-12 flex items-center justify-center">
-                <Command className="h-6 w-6" />
-                </Card>
-              <p className="text-center">Swift</p>
-            </div> 
-
-            <div className="grid items-center justify-center">
-              <Card className="h-12 w-12 flex items-center justify-center">
-                <Command className="h-6 w-6" />
-                </Card>
-              <p className="text-center">Swift</p>
-            </div>
-
-            <div className="grid items-center justify-center">
-              <Card className="h-12 w-12 flex items-center justify-center">
-                <Command className="h-6 w-6" />
-                </Card>
-              <p className="text-center">Swift</p>
-            </div>     
-          </div>
-        </CardContent>
-      </Card>
 
       <div className="grid gap-2">
         <h2 className="text-lg font-bold">Projetos</h2>
@@ -107,23 +65,24 @@ export default function Home() {
           <Card className="max-w-80">
             <CardHeader>
               <CardTitle className="flex gap-2">
-                <Command/>
+                <Command />
                 Venuz
-              </CardTitle>              
+              </CardTitle>
             </CardHeader>
 
             <CardContent className="grid gap-2">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                eaque quas earum distinctio nesciunt dolore iste voluptates totam
-                explicabo consequatur tempora deserunt quam minima modi odit 
-                culpa enim, autem quisquam!
+                É um <span>Design System</span> baseado em tokens que te permite
+                criar interfaces de usuário com flexibilidade e estilo em
+                cada composição.
               </p>
 
               <div className="flex justify-end">
                 <Button variant="outline">
-                  Acessar
-                  <ArrowRight />
+                  <a className="flex gap-2 items-center" href="https://github.com/PaoloProdossimoLopes/venuz">
+                    Ver mais
+                    <ArrowRight />
+                  </a>
                 </Button>
               </div>
             </CardContent>
