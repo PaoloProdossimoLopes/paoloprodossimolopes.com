@@ -7,9 +7,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex-col items-center justify-between p-24">
+    <main className="min-h-screen flex-col items-center justify-between px-24 py-12">
       <div className="grid gap-8">
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center max-lg:grid">
           <Card className="overflow-hidden h-52 w-52 p-1">
             <Avatar className="h-full w-full rounded-sm">
               <AvatarImage
@@ -38,7 +38,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 max-sm:grid">
               <Button variant="outline">
                 <a
                   className="flex gap-2 items-center"

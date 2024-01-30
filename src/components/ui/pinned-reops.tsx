@@ -7,7 +7,7 @@ export async function PinnedRepos() {
   const pinnedRepos = await getGithubPinnedRepositories("PaoloProdossimoLopes")
 
   return (
-    <div className="flex gap-4">
+    <div className="grid gap-4 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
       {pinnedRepos.map((repo) => {
         return (
             <Card className="max-w-80" key={repo.repo}>
