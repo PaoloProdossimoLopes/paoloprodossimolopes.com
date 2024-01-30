@@ -1,11 +1,9 @@
-"use client"
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Command, Download, Github, Linkedin, Mail } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { PinnedRepos } from "@/components/ui/pinned-reops";
+import { Download, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 export default function Home() {
   return (
@@ -53,7 +51,7 @@ export default function Home() {
             </Button>
 
             <Button asChild>
-              <Link href="/files/resume.pdf" target="_blank" locale={false}>
+              <Link className="flex gap-2 items-center" href="/files/resume.pdf" target="_blank" locale={false}>
                 <Download />
                   Baixar curriculo
               </Link>
@@ -64,33 +62,8 @@ export default function Home() {
 
       <div className="grid gap-2">
         <h2 className="text-lg font-bold">Projetos</h2>
-        <div className="flex gap-4">
-          <Card className="max-w-80">
-            <CardHeader>
-              <CardTitle className="flex gap-2">
-                <Command />
-                Venuz
-              </CardTitle>
-            </CardHeader>
-
-            <CardContent className="grid gap-2">
-              <p>
-                É um <span>Design System</span> baseado em tokens que te permite
-                criar interfaces de usuário com flexibilidade e estilo em
-                cada composição.
-              </p>
-
-              <div className="flex justify-end">
-                <Button variant="outline">
-                  <a className="flex gap-2 items-center" href="https://github.com/PaoloProdossimoLopes/venuz">
-                    Ver mais
-                    <ArrowRight />
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        
+        <PinnedRepos />
       </div>
     </main>
   );
