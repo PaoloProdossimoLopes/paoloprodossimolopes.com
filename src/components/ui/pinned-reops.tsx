@@ -1,27 +1,10 @@
-"use client"
-
-import { useEffect, useState } from "react";
-import { z } from "zod";
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
-import { ArrowRight, Command } from "lucide-react";
+import { ArrowRight, Code } from "lucide-react";
 import { Button } from "./button";
 import { getPinnedRepos_v2 as getGithubPinnedRepositories } from "@kentaylorappdev/get-pinned-repos";
 
-const githubPinnedReposSchema = z.array(
-    z.object({
-        repo: z.string(),
-        description: z.string(),
-    })
-);
-
-type GithubPinnedRepos = z.infer<typeof githubPinnedReposSchema>;
-
-export function PinnedRepos() {
-  const [pinnedRepos, setPinnedRepos] = useState<GithubPinnedRepos>([]);
-
-  getGithubPinnedRepositories("PaoloProdossimoLopes").then((repos) => {
-    setPinnedRepos(repos);
-  });
+export async function PinnedRepos() {
+  const pinnedRepos = await getGithubPinnedRepositories("PaoloProdossimoLopes")
 
   return (
     <div className="flex gap-4">
@@ -30,18 +13,19 @@ export function PinnedRepos() {
             <Card className="max-w-80" key={repo.repo}>
                 <CardHeader>
                     <CardTitle className="flex gap-2">
-                    <Command />
+                    <Code />
                     {repo.repo.split("/")[1]}
                     </CardTitle>
                 </CardHeader>
 
-                <CardContent className="grid gap-2">
+                <CardContent className="grid gap-4">
                     <p>{repo.description}</p>
 
                     <div className="flex justify-end">
                     <Button variant="outline">
                         <a
                         className="flex gap-2 items-center"
+                        target="_blank"
                         href={`https://github.com/${repo.repo}`}
                         >
                         Ver mais

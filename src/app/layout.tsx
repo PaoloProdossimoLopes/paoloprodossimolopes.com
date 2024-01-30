@@ -6,13 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Paolo Prodossimo Lopes",
-  description: "Website pessoal de Paolo Prodossimo Lopes",
-  icons: {
-    icon: ['/favicon.ico?v=4'],
-    apple: ['/apple-touch-icon.png?v=4'],
-    shortcut: ['/apple-touch-icon.png'],
-  },
-  manifest: "/site.webmanifest",
+  description: "Website pessoal de Paolo Prodossimo Lopes"
 };
 
 export default function RootLayout({
