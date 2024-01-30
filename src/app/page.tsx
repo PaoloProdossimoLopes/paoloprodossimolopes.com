@@ -1,7 +1,10 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Command, Download, Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function Home() {
@@ -49,11 +52,11 @@ export default function Home() {
               </a>
             </Button>
 
-            <Button>
-              <a className="flex gap-2 items-center" href="#">
+            <Button asChild>
+              <Link href="/files/resume.pdf" target="_blank" locale={false}>
                 <Download />
-                Baixar curriculo
-              </a>
+                  Baixar curriculo
+              </Link>
             </Button>
           </div>
         </div>
