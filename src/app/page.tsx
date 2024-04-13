@@ -5,20 +5,23 @@ import { PinnedRepos } from "@/components/ui/pinned-reops";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
+import profileImageUrl from '../../public/images/profile-image.jpeg'
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen flex-col items-center justify-between px-24 py-12">
       <div className="grid gap-8">
         <div className="flex gap-4 items-center max-lg:grid">
           <Card className="overflow-hidden h-52 w-52 p-1">
-            <Avatar className="h-full w-full rounded-sm">
-              <AvatarImage
+            <div className="h-full w-full rounded-sm overflow-hidden ">
+              <Image
                 className="rounded-sm"
-                src="https://media.licdn.com/dms/image/C5603AQEN25g65QdpBA/profile-displayphoto-shrink_400_400/0/1603466446875?e=1712188800&v=beta&t=h4LsF2w4WqndfPMyXERohEBQh82fwWvSI-YHfmk3AGw"
-                alt="Paolo Prodossimo Lopes"
+                style={{objectFit: "cover"}}
+                src={profileImageUrl}
+                alt=""
               />
-              <AvatarFallback className="rounded-sm">PPL</AvatarFallback>
-            </Avatar>
+            </div>
           </Card>
 
           <div className="grid justify-between gap-4">
